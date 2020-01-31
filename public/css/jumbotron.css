@@ -1,0 +1,13 @@
+/* Move down content because we have a fixed navbar that is 3.5rem tall */
+/*body {
+  padding-top: 3.5rem;
+}*/
+.links > a {
+  color: DodgerBlue;
+  padding: 0 15px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
