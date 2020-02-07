@@ -9,6 +9,8 @@ class IndexController extends Controller
     
     public function index(){
         $hw = 'Hello World!';
-        return view('index')->with('hw', $hw);   
+        $ms = 'This is a template for a simple marketing or informational website. It includes a large callout called a jumbatron and three supporting pieces of content. use it as a starting point to create something more unique';
+
+        return view('index')->with(['hw'=>$hw, 'ms' => $ms]);   
     }
 }
