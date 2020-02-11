@@ -12,4 +12,5 @@
 */
 
 Route::get('/' ,'IndexController@index');
+Route::resource('contact', 'ContactController');
     
