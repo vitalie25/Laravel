@@ -12,11 +12,11 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container">
         <div class="navbar-header">
-           <a class="navbar-brand" href="#">Project name</a>
+           <a class="navbar-brand" href="/">Project name</a>
         </div>
         <div class="links">
-          <a href="page1">Page1</a>
-          <a href="#">Page2</a>
+          <a href="/page/add">AddItem</a>
+          <a href="/admin">Admin</a>
           <a href="#">Page3</a>
           <a href="#">Page4</a>
           <a href="#">Page5</a>
@@ -26,6 +26,14 @@
          </div>
        </div>
     </nav>
+    @if(count($errors)>0)
+  <div class="alert alert-danger">
+    <ul>
+      @foreach($errors->all() as $error)
+      <li>{{$error}}</li>
+      @endforeach
+    </ul>
+    @endif
 
 @yield('content')
 

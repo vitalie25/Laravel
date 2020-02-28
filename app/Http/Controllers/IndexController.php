@@ -35,4 +35,33 @@ public function show($id){
     $article=Article::select(['id', 'title', 'text', 'img'])->where('id' ,$id)->first();
     return view('article-content')->with(['ms'=>$this->ms, 'hw'=>$this->hw, 'article'=>$article]);
 }
+
+public function add(){
+    return view ('add-content')->with(['hw' => $this->hw, 'ms' =>$this->ms]);
+}
+public function store(Request $request)
+    {
+        echo $request;
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'text' => 'required',
+        ]);
+        $data = $request->all();
+        $article = new Article;
+        $article->fill($data);
+        $article->save();
+
+        return redirect('/');
+    }
+
+    public function admin()
+    {
+        $articless = Article::select(['title', 'description', 'img', 'id', 'text'])->get();
+        //dump($articles);
+        return view('admin')->with([
+            'articless' => $articless
+        ]);
+    }
+
 }
